@@ -7,8 +7,8 @@ int main()
     {
         cout << "Enter the 7 AQI values for city " << i + 1 << ": " << endl;
         for (int j = 0; j < 7; j++)
-        {   
-            cout<<"Day "<<j+1<<": ";
+        {
+            cout << "Day " << j + 1 << ": ";
             cin >> aqi[i][j];
         }
     }
@@ -35,19 +35,19 @@ int main()
     cout << "\nDays where AQI exceeded 150:\n";
     for (int i = 0; i < 4; i++)
     {
-        cout<<"City "<<i+1<<": ";
+        cout << "City " << i + 1 << ": ";
         bool found = false;
         for (int j = 0; j < 7; j++)
         {
             if (aqi[i][j] > 150)
             {
-               cout<<j+1<<" ";
-               found = true;
+                cout << j + 1 << " ";
+                found = true;
             }
         }
         if (!found)
             cout << "None";
-            cout<<"\n";
+        cout << "\n";
     }
 
     cout << "\nAQI Levels Visual Representation:\n";
@@ -57,8 +57,7 @@ int main()
         for (int j = 0; j < 7; j++)
         {
             cout << "Day " << j + 1 << " (" << aqi[i][j] << "): ";
-            
-            // Print '*' for every 50 AQI points
+
             int stars = aqi[i][j] / 50;
             for (int k = 0; k < stars; k++)
             {
