@@ -32,7 +32,7 @@ int main()
     }
     cout << "\nCity with the worst Air Quality is City " << highestcity << endl;
 
-    cout << "\nCities that exceeded an AQI of 150:\n";
+    cout << "\nDays where AQI exceeded 150:\n";
     for (int i = 0; i < 4; i++)
     {
         cout<<"City "<<i+1<<": ";
@@ -48,5 +48,24 @@ int main()
         if (!found)
             cout << "None";
             cout<<"\n";
+    }
+
+    cout << "\nAQI Levels Visual Representation:\n";
+    for (int i = 0; i < 4; i++)
+    {
+        cout << "City " << i + 1 << ":\n";
+        for (int j = 0; j < 7; j++)
+        {
+            cout << "Day " << j + 1 << " (" << aqi[i][j] << "): ";
+            
+            // Print '*' for every 50 AQI points
+            int stars = aqi[i][j] / 50;
+            for (int k = 0; k < stars; k++)
+            {
+                cout << "*";
+            }
+            cout << endl;
+        }
+        cout << endl;
     }
 }
